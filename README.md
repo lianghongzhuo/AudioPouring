@@ -11,7 +11,7 @@ If you found this paper useful in your research, please consider citing:
 ```plain
 @article{liang2019AudioPouring,
   title={Making Sense of Audio Vibration for Liquid Height Estimation in Robotic Pouring},
-  author={Liang, Hongzhuo and Li, Shuang and Ma, Xiaojian  and Norman Hendrich and Timo Gerkmann and Zhang, Jianwei},
+  author={Liang, Hongzhuo and Li, Shuang and Ma, Xiaojian  and Hendrich Norman and Gerkmann Timo and Zhang, Jianwei},
   journal={arXiv preprint arXiv:1903.00650},
   year={2019}
 }
