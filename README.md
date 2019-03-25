@@ -121,7 +121,9 @@ Project website: https://lianghongzhuo.github.io/AudioPouring/
     ```
 
 ## Dataset
-![dataset setup](images/setup.svg)
+<p align="center">
+<img src="images/setup.svg" width="65%" alt="setup" style="margin-left:auto;margin-right:auto;display:block">
+</p>
 - Contain video, audio, force/torque, position message.
 - Download: coming soon ...
 
