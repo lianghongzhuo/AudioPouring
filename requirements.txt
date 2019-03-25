@@ -1,0 +1,14 @@
+librosa
+IPython
+matplotlib
+numpy
+rospkg
+yaml
+mayavi
+scipy
+torch
+tensorboardX
+seaborn
+trimesh
+pyglet
+pandas
