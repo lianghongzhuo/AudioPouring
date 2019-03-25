@@ -1,7 +1,6 @@
 # Audio Pouring
-In this paper ([arXiv](https://arxiv.org/abs/1903.00650), [code](https://github.com/lianghongzhuo/AudioPouring), [video](https://www.youtube.com/embed/Za8dDjGFE1k)),
-we propose to make use of audio vibration sensing and design a deep neural
-network PouringNet to predict the liquid height from the audio fragment during the robotic pouring task.
+we propose to make use of audio vibration sensing with a deep neural
+network named PouringNet to predict the liquid height from the audio fragment during the robotic pouring task.
 PouringNet is trained on our collected real-world pouring dataset with multimodal sensing data, which
 contains more than 3000 recordings of audio, force feedback, video and trajectory data of the human hand
 that performs the pouring task. Each record represents a complete pouring procedure. We conduct several
@@ -10,23 +9,27 @@ PouringNet generalizes well across different liquid containers, positions of the
 initial liquid heights and types of liquid, and facilitates a more robust and accurate audio-based
 perception for robotic pouring.
 
-Project website: https://lianghongzhuo.github.io/AudioPouring/
-## Pipeline
+- Project website: https://lianghongzhuo.github.io/AudioPouring/
+- Preprint: https://arxiv.org/abs/1903.00650
+- Video: https://www.youtube.com/watch?v=Za8dDjGFE1k
+- Contact: liang@informatik.uni-hamburg.de, maxiaojian@ucla.edu
+
+## Overview
 <p align="center">
 <img src="images/pipeline.svg" width="60%" alt="Pipeline" style="margin-left:auto;margin-right:auto;display:block">
 </p>
 
 ## Experiments
-- Tested at different cups
+- Pouring with different cups
     <p align="center">
     <img src="images/all_cups.jpg" width="60%" alt="All cups" style="margin-left:auto;margin-right:auto;display:block">
     </p>
-    From left to right are marked as 1, 3, 4, 6, 7, 8. And cup 1, 3, 4 are cups presented in the dataset, while others are not in dataset.
+    All the cups are marked as #1-8 from left to right. And only cup #1/3/4 present in the dataset, while others are not included.
 
-- Tested different initial height using cup 3.
-- Tested at different mic positions.
+- Pouring with different initial heights on cup #3.
+- Pouring with different microphone positions.
 
-## How to install
+## Installation
 1. Install [Anaconda](https://www.anaconda.com/download/#linux) and [PyTorch](https://pytorch.org/):
     ```bash
     conda upgrade --all
@@ -66,15 +69,15 @@ Project website: https://lianghongzhuo.github.io/AudioPouring/
         sh audio_pouring_install.sh
         ```
 
-1. Install ROS package [portaudio_transport](https://github.com/lianghongzhuo/portaudio_transport.git)
+1. Install required ROS package [portaudio_transport](https://github.com/lianghongzhuo/portaudio_transport.git)
 
 ## Run demo
-1. Bring up audio publish node:
+1. Bring up audio publishing node:
 
     ```
     roslaunch portaudio_transport publish.launch
     ```
-1. Bring up a scale to get ground truth, if you do not have a ROS based scale, see step 4.
+1. Bring up a scale to get the ground truth height, if you do not have a ROS based scale, directly go to step 4.
 
 1. Run demo code
 
@@ -82,26 +85,26 @@ Project website: https://lianghongzhuo.github.io/AudioPouring/
     cd ${AUDIO_POURING_DIR}/audio_pouring
     python demo.py --cuda --bottle=1 --cavity-height=50
     ```
-1. If you do not have a ROS scale, you can use a normal scale and check the pouring result by this code:
+1. (In case when a ROS-based scale is not available) you can also use a normal scale and check the pouring result with the code below:
     ```python
     from audio_pouring.utils.utils import weight2height
     print(weight2height(cup_id="1", cur_weight=0.02))
     ```
 
-## Training Network
-1. Prepare data: generate 4s dataset from whole pouring sequence (pickle files):
+## Network Training
+1. Data preparation: generate a ~4s segment from a whole pouring sequence (pickle files):
     ```
     cd ${AUDIO_POURING_DIR}/audio_pouring/model
     python long_preprocess.py train mt
     python long_preprocess.py test mt
     ```
 
-1. Prepare data: generate npy file list
+1. Data preparation: generate npy file list from that segment
     ```
     cd ${AUDIO_POURING_DIR}/audio_pouring/utils
     python generate_npy_list.py
     ```
-1. Train network
+1. Network training
     ```
     cd ${AUDIO_POURING_DIR}/audio_pouring
     python main_lstm.py --fixed --cuda --gpu=0 --bottle-train=0 --lstm --bs=32
@@ -125,11 +128,11 @@ Project website: https://lianghongzhuo.github.io/AudioPouring/
 <img src="images/setup.svg" width="65%" alt="setup" style="margin-left:auto;margin-right:auto;display:block">
 </p>
 
-- Contain video, audio, force/torque, position message.
+- Contain video, audio, force/torque and position information collected during human pouring.
 - Download: coming soon ...
 
 ## Citation
-If you found this paper useful in your research, please consider citing:
+If you find this paper and code useful in your research, please consider citing:
 
 ```plain
 @article{liang2019AudioPouring,
