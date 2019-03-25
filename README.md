@@ -1,6 +1,6 @@
 # Audio Pouring
 we propose to make use of audio vibration sensing with a deep neural
-network named PouringNet to predict the liquid height from the audio fragment during the robotic pouring task.
+network named **PouringNet** to predict the liquid height from the audio fragment during the robotic pouring task.
 PouringNet is trained on our collected real-world pouring dataset with multimodal sensing data, which
 contains more than 3000 recordings of audio, force feedback, video and trajectory data of the human hand
 that performs the pouring task. Each record represents a complete pouring procedure. We conduct several
@@ -24,7 +24,7 @@ perception for robotic pouring.
     <p align="center">
     <img src="images/all_cups.jpg" width="60%" alt="All cups" style="margin-left:auto;margin-right:auto;display:block">
     </p>
-    All the cups are marked as #1-8 from left to right. And only cup #1/3/4 present in the dataset, while others are not included.
+    The cups are marked as #1-6 from left to right. And only cup #1/3/4 present in the dataset, while others are not included.
 
 - Pouring with different initial heights on cup #3.
 - Pouring with different microphone positions.
@@ -64,24 +64,25 @@ perception for robotic pouring.
         ```
     - Make sure your current user name is in `audio` group
     - Other dependencies (only for robot experiment):
-        ```
+        ```bash
         cd ${AUDIO_POURING_DIR}
         sh audio_pouring_install.sh
         ```
 
-1. Install required ROS package [portaudio_transport](https://github.com/lianghongzhuo/portaudio_transport.git)
+1. Install following required ROS packages:
+- [portaudio_transport](https://github.com/lianghongzhuo/portaudio_transport.git)
 
 ## Run demo
 1. Bring up audio publishing node:
 
-    ```
+    ```bash
     roslaunch portaudio_transport publish.launch
     ```
 1. Bring up a scale to get the ground truth height, if you do not have a ROS based scale, directly go to step 4.
 
 1. Run demo code
 
-    ```
+    ```bash
     cd ${AUDIO_POURING_DIR}/audio_pouring
     python demo.py --cuda --bottle=1 --cavity-height=50
     ```
@@ -93,32 +94,32 @@ perception for robotic pouring.
 
 ## Network Training
 1. Data preparation: generate a ~4s segment from a whole pouring sequence (pickle files):
-    ```
+    ```bash
     cd ${AUDIO_POURING_DIR}/audio_pouring/model
     python long_preprocess.py train mt
     python long_preprocess.py test mt
     ```
 
 1. Data preparation: generate npy file list from that segment
-    ```
+    ```bash
     cd ${AUDIO_POURING_DIR}/audio_pouring/utils
     python generate_npy_list.py
     ```
 1. Network training
-    ```
+    ```bash
     cd ${AUDIO_POURING_DIR}/audio_pouring
     python main_lstm.py --fixed --cuda --gpu=0 --bottle-train=0 --lstm --bs=32
-    args:
-    --fixed       : the input audio length is fixed (must set)
-    --lstm        : set to use lstm or gru
-    --bs          : set batch size
-    --bottle-train: set bottle id, if set to 0, then all the data are used
+    #args:
+    #--fixed       : the input audio length is fixed (must set)
+    #--lstm        : set to use lstm or gru
+    #--bs          : set batch size
+    #--bottle-train: set bottle id, if set to 0, then all the data are used
     ```
 
 ## Generate your own bottle config file
 - create a bottle config csv file and put it at `${AUDIO_POURING_DIR}/audio_pouring/config/bottles`
-- modify and run this code:
-    ```
+- modify and run the code below:
+    ```bash
     cd ${AUDIO_POURING_DIR}/audio_pouring/utils
     python generate_bottle_config.py
     ```
