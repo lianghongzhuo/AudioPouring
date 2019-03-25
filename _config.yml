@@ -2,3 +2,5 @@ title: Making Sense of Audio Vibration for Liquid Height Estimation in Robotic P
 description: Hongzhuo Liang, Shuang Li, Xiaojian Ma, Norman Hendrich, Timo Gerkmann, Jianwei Zhang
 show_downloads: false
 theme: jekyll-theme-cayman
+github:
+  is_project_page: false
