@@ -24,7 +24,7 @@ perception for robotic pouring.
     <p align="center">
     <img src="images/all_cups.jpg" width="60%" alt="All cups" style="margin-left:auto;margin-right:auto;display:block">
     </p>
-    The cups are marked as #1-6 from left to right. And only cup #1/3/4 present in the dataset, while others are not included.
+    The cups are marked as #1-6 from left to right. And only cup #1/2/3 present in the dataset, while others are not included.
 
 - Pouring with different initial heights on cup #3.
 - Pouring with different microphone positions.
