@@ -1,5 +1,5 @@
 # Audio Pouring
-we propose to make use of audio vibration sensing with a deep neural
+We propose to make use of audio vibration sensing with a deep neural
 network named **PouringNet** to predict the liquid height from the audio fragment during the robotic pouring task.
 PouringNet is trained on our collected real-world pouring dataset with multimodal sensing data, which
 contains more than 3000 recordings of audio, force feedback, video and trajectory data of the human hand
