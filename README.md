@@ -130,7 +130,8 @@ perception for robotic pouring.
 </p>
 
 - Contain video, audio, force/torque and position information collected during human pouring.
-- Download: coming soon ...
+- Current, we offer dataset with only audio input.
+- Download:  https://drive.google.com/open?id=1zavcGC73OTsV8bsYrk6kPArHhIJNvvF8
 
 ## Citation
 If you find this paper and code useful in your research, please consider citing:
