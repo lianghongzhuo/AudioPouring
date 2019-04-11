@@ -5,6 +5,15 @@ In this paper ([arXiv](https://arxiv.org/abs/1903.00650), [code](https://github.
 ## Video
 <iframe width="560" height="315" src="https://www.youtube.com/embed/ZRUdyDkdspY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
+## Dataset
+<p align="center">
+<img src="images/setup.svg" width="65%" alt="setup" style="margin-left:auto;margin-right:auto;display:block">
+</p>
+
+- Contain video, audio, force/torque and position information collected during human pouring.
+- Current, we offer dataset with only audio input.
+- Download:  https://drive.google.com/open?id=1zavcGC73OTsV8bsYrk6kPArHhIJNvvF8
+
 ## Citation
 If you found this paper useful in your research, please consider citing:
 
