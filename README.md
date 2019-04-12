@@ -15,9 +15,8 @@ Code of this project can be found at [https://github.com/lianghongzhuo/AudioPour
 <img src="images/setup.svg" width="65%" alt="setup" style="margin-left:auto;margin-right:auto;display:block">
 </p>
 
-- Contain video, audio, force/torque and position information collected during human pouring.
-- Current, we offer dataset with only audio input.
-- Download: [https://drive.google.com/open?id=1zavcGC73OTsV8bsYrk6kPArHhIJNvvF8]( https://drive.google.com/open?id=1zavcGC73OTsV8bsYrk6kPArHhIJNvvF8)
+- Containing video, audio, force/torque and position information collected during human pouring.
+- We plan to release our dataset progressively. Now the audio part is available at [Google Drive](https://drive.google.com/open?id=1zavcGC73OTsV8bsYrk6kPArHhIJNvvF8).
 
 ## Citation
 If you found this paper useful in your research, please consider citing:
