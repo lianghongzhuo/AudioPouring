@@ -136,10 +136,10 @@ perception for robotic pouring.
 If you find this paper and code useful in your research, please consider citing:
 
 ```plain
-@article{liang2019AudioPouring,
+@inproceedings{liang2019AudioPouring,
   title={Making Sense of Audio Vibration for Liquid Height Estimation in Robotic Pouring},
   author={Liang, Hongzhuo and Li, Shuang and Ma, Xiaojian  and Hendrich Norman and Gerkmann Timo and Zhang, Jianwei},
-  journal={arXiv preprint arXiv:1903.00650},
+  booktitle={IEEE International Conference on Intelligent Robots and Systems (IROS)},
   year={2019}
 }
 ```
