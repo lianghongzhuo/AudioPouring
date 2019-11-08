@@ -12,6 +12,7 @@ perception for robotic pouring.
 - Project website: https://lianghongzhuo.github.io/AudioPouring/
 - Preprint: https://arxiv.org/abs/1903.00650
 - Video: https://www.youtube.com/watch?v=Za8dDjGFE1k
+- Slides presented in IROS 2019: [PDF](images/20191106_pouring_IROS2019_report.pdf)
 - Contact: liang@informatik.uni-hamburg.de, maxiaojian@ucla.edu
 
 ## Overview
